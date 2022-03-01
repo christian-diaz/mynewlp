@@ -2,17 +2,10 @@
 :root {
   --primary-light-color: #f1e9e2;
   --secondary-light-color: rgb(139,133,126);
-  --primary-dark-color: #313431;
+  --primary-dark-color: #2e2e2d;
   --secondary-dark-color: rgb(106,72,37);
 }
 
-/*
-* {
-    //box-sizing: border-box;
-    //margin: 0;
-    //padding: 0;
-}
-*/
 body {
   margin: 1.5em;
   font-family: "Montserrat", "Helvetica Neue", Sans-serif;
@@ -106,6 +99,7 @@ h1 {
   bottom: 2em;
   right: 2em;
   width: 2em;
+  animation: moveArrow 0.8s alternate-reverse infinite;
 }
 
 .hero-section .down-arrow path {
@@ -133,10 +127,13 @@ h1 {
   height: 80vh;
   z-index: -1;
   overflow: hidden;
+  -webkit-animation: introload 2s forwards;
+          animation: introload 2s forwards;
 }
 
-.sub-head {
-  font-size: 1.4rem;
+.subhead {
+  font-size: 1.2rem;
+  max-width: 450px;
 }
 
 .more-info img {
@@ -195,6 +192,12 @@ h1 {
     background: none;
     text-decoration: underline;
   }
+  .hero-section {
+    color: var(--primary-dark-color);
+    height: auto;
+    width: 60%;
+    margin-bottom: 45em;
+  }
   .hero-img {
     left: unset;
     right: 0;
@@ -203,6 +206,89 @@ h1 {
   }
   .logo {
     color: var(--primary-dark-color);
+  }
+  .feature {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (auto)[2];
+        grid-template-columns: repeat(2, auto);
+    gap: 4em;
+    margin-bottom: 8em;
+  }
+  .feature img {
+    width: 25em;
+  }
+  .feature .content {
+    text-align: right;
+    width: 25em;
+  }
+  .feature.reverse {
+        grid-template-areas: "left right";
+  }
+  .feature.reverse img {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: left;
+  }
+  .feature.reverse .content {
+    text-align: left;
+    width: 25em;
+    -ms-grid-column-align: left;
+        justify-self: left;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .main-container {
+    width: 1200px;
+    margin: 0 auto;
+  }
+  .feature {
+    gap: 0;
+  }
+}
+
+/******************************** Animations ********************************/
+@-webkit-keyframes introload {
+  from {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+@keyframes introload {
+  from {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@-webkit-keyframes moveArrow {
+  from {
+    -webkit-transform: translateY(-25px);
+            transform: translateY(-25px);
+  }
+  to {
+    -webkit-clip-path: translateY(0);
+            clip-path: translateY(0);
+  }
+}
+
+@keyframes moveArrow {
+  from {
+    -webkit-transform: translateY(-25px);
+            transform: translateY(-25px);
+  }
+  to {
+    -webkit-clip-path: translateY(0);
+            clip-path: translateY(0);
   }
 }
 /*# sourceMappingURL=main.css.map */

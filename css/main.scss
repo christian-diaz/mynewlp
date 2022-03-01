@@ -4,16 +4,11 @@
     --primary-light-color: #f1e9e2;
     --secondary-light-color: rgb(139,133,126);
   
-    --primary-dark-color: #313431;
+    --primary-dark-color: #2e2e2d;
     --secondary-dark-color: rgb(106,72,37);
   }
-/*
-* {
-    //box-sizing: border-box;
-    //margin: 0;
-    //padding: 0;
-}
-*/
+
+
 
 body {
     margin: 1.5em;
@@ -103,6 +98,7 @@ h1 {
         bottom: 2em;
         right: 2em;
         width: 2em;
+        animation: moveArrow 0.8s alternate-reverse infinite;
 
         path {
             fill: var(--primary-dark-color);
@@ -133,14 +129,15 @@ h1 {
     //object-fit: fill;
     z-index: -1;
     overflow: hidden;
+    animation: introload 2s forwards;
 }
 
-.sub-head {
-    font-size: 1.4rem;
+.subhead {
+    font-size: 1.2rem;
+    max-width: 450px;
 }
 
 .more-info {
-    
 
     img {
         width: 100%;
@@ -163,7 +160,8 @@ h1 {
 
     body {
         margin: 1.5em 5em;
-    }    
+    } 
+    
 }
 
 /*********************************** Media query for desktop devices ***********************************/
@@ -203,6 +201,13 @@ h1 {
         }
     }
 
+   .hero-section {
+       color: var(--primary-dark-color);
+       height: auto;
+       width: 60%;
+       margin-bottom: 45em;
+   }
+
     .hero-img {
         left: unset;
         right: 0;
@@ -212,5 +217,70 @@ h1 {
 
     .logo {
         color: var(--primary-dark-color);
+    }
+
+    .feature {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 4em;
+        margin-bottom: 8em;
+
+        img {
+            width: 25em;
+            
+        }
+
+        .content {
+            text-align: right;
+            width: 25em;
+            
+        }
+    }
+
+    .feature.reverse {
+        grid-template-areas: "left right";
+
+        img {
+            grid-area: left;
+            
+        }
+
+        .content {
+            text-align: left;
+            width: 25em;
+            justify-self: left;
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .main-container {
+        width: 1200px;
+        margin: 0 auto;
+    }
+
+    .feature {
+        gap: 0;
+    }
+
+}
+
+/******************************** Animations ********************************/
+
+@keyframes introload {
+    from {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes moveArrow {
+    from {
+        transform: translateY(-25px);
+    }
+    to {
+        clip-path: translateY(0);
     }
 }
