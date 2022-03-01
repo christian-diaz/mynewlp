@@ -4,6 +4,11 @@
   --secondary-light-color: rgb(139,133,126);
   --primary-dark-color: #2e2e2d;
   --secondary-dark-color: rgb(106,72,37);
+  --third-dark-color: #f0f0f0;
+}
+
+* {
+  border: 1px solid transparent;
 }
 
 body {
@@ -22,8 +27,9 @@ nav {
   position: fixed;
   right: 0;
   top: 0;
+  background: #fff;
   height: 100vh;
-  width: 50%;
+  width: 60%;
   z-index: 999;
   text-transform: uppercase;
   -webkit-transform: translateX(100%);
@@ -41,7 +47,7 @@ nav ul {
 }
 
 nav ul a {
-  color: var(--primary-light-color);
+  color: var(--primary-dark-color);
   padding: .75em;
   display: block;
   width: 100%;
@@ -49,13 +55,20 @@ nav ul a {
 }
 
 nav ul a:hover {
-  background-color: var(--secondary-light-color);
+  background-color: var(--third-dark-color);
 }
 
 nav .close {
   float: right;
   margin: 2em;
   width: 2em;
+  margin-top: 1.5em;
+  margin-right: 4em;
+  cursor: pointer;
+}
+
+nav .close path {
+  fill: var(--primary-dark-color);
 }
 
 header {
@@ -79,7 +92,7 @@ header svg path {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   margin-top: 2em;
   line-height: 3.3rem;
 }
@@ -90,7 +103,8 @@ h1 {
 
 .hero-section {
   color: var(--primary-light-color);
-  height: 100vh;
+  height: 90vh;
+  margin-top: 8em;
 }
 
 .hero-section .down-arrow {
@@ -99,7 +113,6 @@ h1 {
   bottom: 2em;
   right: 2em;
   width: 2em;
-  animation: moveArrow 0.8s alternate-reverse infinite;
 }
 
 .hero-section .down-arrow path {
@@ -109,6 +122,10 @@ h1 {
 .hero-name {
   text-transform: uppercase;
   font-weight: normal;
+}
+
+.hero-name span {
+  margin-right: -0.3em;
 }
 
 .hero-desc {
@@ -124,7 +141,7 @@ h1 {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
   width: 100%;
-  height: 80vh;
+  height: 100vh;
   z-index: -1;
   overflow: hidden;
   -webkit-animation: introload 2s forwards;
@@ -152,22 +169,38 @@ h1 {
   line-height: 1.5rem;
 }
 
+.open-nav {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
 /*********************************** Media query for tablet devices ***********************************/
 @media only screen and (min-width: 680px) {
   body {
     margin: 1.5em 5em;
   }
+  .more-info img {
+    margin-bottom: 3rem;
+  }
+  .more-info .desc {
+    margin-top: -0.5em;
+  }
 }
 
 /*********************************** Media query for desktop devices ***********************************/
-@media only screen and (min-width: 920px) {
+@media only screen and (min-width: 900px) {
+  .main-container {
+    width: 85vw;
+    margin: 0 auto;
+  }
   .menu {
     display: none;
   }
   nav {
     -webkit-transform: translateX(0);
             transform: translateX(0);
-    position: unset;
+    position: relative;
+    right: 6em;
     display: block;
     width: auto;
     height: auto;
@@ -195,14 +228,14 @@ h1 {
   .hero-section {
     color: var(--primary-dark-color);
     height: auto;
-    width: 60%;
-    margin-bottom: 45em;
+    width: 60vw;
+    margin-bottom: 62em;
   }
   .hero-img {
     left: unset;
     right: 0;
     width: 50%;
-    height: 42em;
+    height: 65em;
   }
   .logo {
     color: var(--primary-dark-color);
@@ -240,7 +273,7 @@ h1 {
 
 @media only screen and (min-width: 1200px) {
   .main-container {
-    width: 1200px;
+    width: 70vw;
     margin: 0 auto;
   }
   .feature {
@@ -270,25 +303,25 @@ h1 {
   }
 }
 
-@-webkit-keyframes moveArrow {
-  from {
-    -webkit-transform: translateY(-25px);
-            transform: translateY(-25px);
-  }
-  to {
-    -webkit-clip-path: translateY(0);
-            clip-path: translateY(0);
-  }
+.down-arrow {
+  -webkit-animation: bounce 1s infinite;
+          animation: bounce 1s infinite;
 }
 
-@keyframes moveArrow {
-  from {
-    -webkit-transform: translateY(-25px);
-            transform: translateY(-25px);
-  }
-  to {
-    -webkit-clip-path: translateY(0);
-            clip-path: translateY(0);
-  }
+.logo {
+  display: inline-block;
+  -webkit-animation: pulse 3s infinite;
+          animation: pulse 3s infinite;
+}
+
+.hero-text {
+  -webkit-animation: fadeInDownBig 2s;
+          animation: fadeInDownBig 2s;
+}
+
+.hero-name:hover {
+  -webkit-animation: headShake 2s;
+          animation: headShake 2s;
+  cursor: pointer;
 }
 /*# sourceMappingURL=main.css.map */
