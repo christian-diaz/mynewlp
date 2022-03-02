@@ -27,17 +27,17 @@ nav {
   position: fixed;
   right: 0;
   top: 0;
-  background: #fff;
+  background: var(--primary-dark-color);
   height: 100vh;
   width: 60%;
   z-index: 999;
   text-transform: uppercase;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
-  -webkit-transition: -webkit-transform 0.5s ease-in-out;
-  transition: -webkit-transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  -webkit-transition: -webkit-transform 0.7s ease-in-out;
+  transition: -webkit-transform 0.7s ease-in-out;
+  transition: transform 0.7s ease-in-out;
+  transition: transform 0.7s ease-in-out, -webkit-transform 0.7s ease-in-out;
 }
 
 nav ul {
@@ -54,21 +54,18 @@ nav ul a {
   text-align: center;
 }
 
-nav ul a:hover {
-  background-color: var(--third-dark-color);
-}
-
 nav .close {
   float: right;
   margin: 2em;
   width: 2em;
   margin-top: 1.5em;
-  margin-right: 4em;
+  margin-right: 2em;
   cursor: pointer;
+  stroke: none;
 }
 
 nav .close path {
-  fill: var(--primary-dark-color);
+  fill: var(--primary-light-color);
 }
 
 header {
@@ -116,7 +113,7 @@ h1 {
 }
 
 .hero-section .down-arrow path {
-  fill: var(--primary-dark-color);
+  fill: var(--primary-light-color);
 }
 
 .hero-name {
@@ -223,7 +220,6 @@ h1 {
   }
   nav ul a:hover {
     background: none;
-    text-decoration: underline;
   }
   .hero-section {
     color: var(--primary-dark-color);
@@ -250,6 +246,14 @@ h1 {
   }
   .feature img {
     width: 25em;
+  }
+  .feature img:hover {
+    -webkit-transform: translateX(3%) translateY(3%);
+            transform: translateX(3%) translateY(3%);
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+    transition: -webkit-transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
   }
   .feature .content {
     text-align: right;
@@ -323,5 +327,36 @@ h1 {
   -webkit-animation: headShake 2s;
           animation: headShake 2s;
   cursor: pointer;
+}
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: var(--primary-light-color);
+}
+
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-light-color);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: -webkit-transform 0.25s ease-out;
+  transition: -webkit-transform 0.25s ease-out;
+  transition: transform 0.25s ease-out;
+  transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: center;
+          transform-origin: center;
 }
 /*# sourceMappingURL=main.css.map */
