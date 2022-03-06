@@ -20,9 +20,9 @@
                         <path d="M12 1.2L10.8 0L6 4.8L1.2 0L0 1.2L4.8 6L0 10.8L1.2 12L6 7.2L10.8 12L12 10.8L7.2 6L12 1.2Z" fill="black"/>
                     </svg>
                     <ul>
-                        <li><a class="hover-underline-animation" href="#">Home</a></li>
-                        <li><a class="hover-underline-animation" href="#">About</a></li>
-                        <li><a class="hover-underline-animation" href="#">Contact</a></li>
+                        <li><a class="hover-underline-animation" href="#Home">Home</a></li>
+                        <li><a class="hover-underline-animation" href="#About">About</a></li>
+                        <li><a class="hover-underline-animation" href="#Contact">Contact</a></li>
                     </ul>
                 </nav>
 
@@ -35,6 +35,11 @@
             <section class="hero-section">
                 <div class="hero-text">
                     <h1 class="hero-name">Christian Aguayo</h1>
+                    <div class="hero-name-underline">
+                        <canvas>
+                        </canvas>
+                    </div>
+                    
                     <h2 class="hero-desc">Web Developer - Project Manager</h2>
                     <p class="subhead">Creating user-centric, esthetic digital experiences in Stockholm, Sweden.</p>
                 </div>
@@ -46,30 +51,68 @@
                 
             </section>
 
-            <section class="more-info">
-                <div class="feature">
+            <section class="more-info" id="About">
+                <div>
+                    <h1 class="section-title reveal">Work.</h1>
+                </div>
+                <div class="feature reveal">
                     <div class="content">
                         <p class="title">Project 1</p>
                         <p class="desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta deleniti, error iure pariatur est at!</p>
                     </div>
-                    <img src="./img/dev1.jpeg" alt="Developer Image">
+                    <img class="hover-translate-animation" src="./img/dev1.jpeg" alt="Developer Image">
                 </div>
-                <div class="feature reverse">
+                <div class="feature reverse reveal">
                     <div class="content">
                         <p class="title">Project 2</p>
                         <p class="desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta deleniti, error iure pariatur est at!</p>
                     </div>
-                    <img src="./img/dev2.jpeg" alt="Developer Image">
+                    <img class="hover-translate-animation" src="./img/dev2.jpeg" alt="Developer Image">
                 </div>
-                <div class="feature">
+                <div class="feature reveal">
                     <div class="content">
                         <p class="title">Project 3</p>
                         <p class="desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta deleniti, error iure pariatur est at!</p>
                     </div>
-                    <img src="./img/dev3.jpeg" alt="Developer Image">
+                    <img class="hover-translate-animation" src="./img/dev3.jpeg" alt="Developer Image">
                 </div>
             </section>
+
+            <footer id="Contact">
+                <div>
+                    <h1 class="section-title reveal">Contact.</h1>
+                </div>
+                <div class="form-container">
+                    <form>
+                        <ul class="flex-outer">
+                          <li>
+                            <label for="form-name">Name:</label>
+                            <input class="form-input" type="text" id="form-name" placeholder="Enter name here">
+                          </li>
+                          <li>
+                            <label for="form-email">Email:</label>
+                            <input class="form-input"  type="email" id="form-email" placeholder="you@domain.com">
+                          </li>
+                          <li>
+                            <label for="form-message">Message:</label>
+                            <textarea class="form-input"  rows="6" id="form-message" placeholder="Enter your message here"></textarea>
+                          </li>
+                          <li>
+                            <button type="submit">Submit</button>
+                          </li>
+                        </ul>
+                      </form>
+                </div>
+                <div class="footer-container">
+                    <h3 class="hover-underline-animation"><a href="#">Instagram</a></h3>
+                    <h3 class="hover-underline-animation"><a href="#">Behance</a></h3>
+                    <h3 class="hover-underline-animation"><a href="#">Email</a></h3>
+                </div>
+
+            </footer>
+
         </div>
+
 
        <script src="./app.js"></script>
 
